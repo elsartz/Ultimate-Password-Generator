@@ -97,6 +97,10 @@ button[disabled] {
   float: right;
 }
 
+#generate:hover {
+  background-color: green;
+}
+
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;

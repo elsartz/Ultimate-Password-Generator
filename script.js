@@ -1,5 +1,33 @@
-// Assignment code here
+// Group of characters
 
+
+
+  var characters = {
+    specialChar: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
+    alphabet: "abcdefghijklmnopqrstuvwxyz",
+    alphabetCapitals: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    numbers: "0123456789"
+  };
+  var randomNumber = function (min, max) {
+    var result = Math.floor(Math.random() * (max - min));
+    return result;
+  };
+  var totalSelection = characters.alphabet +
+                       characters.alphabetCapitals+
+                       characters.numbers+
+                       characters.specialChar;
+// debugger;
+  console.log(totalSelection);
+
+  
+  // var pattern = randomNumber(selection.length - totalSelection.length);
+
+
+
+
+  var generatePassword = function() {
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -10,7 +38,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
+  return password;
 }
 
 // Add event listener to generate button
