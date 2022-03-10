@@ -21,15 +21,43 @@ var generatePassword = function() {
 
   
   // var pattern = randomNumber(selection.length - totalSelection.length);
+debugger;
+  var totalSelection = "";
 
-var desire = "";
-while (desire ! "Y" || desire === null) {
-  desire = prompt("Would you like to add small latin letters to your password?");
+  while (totalSelection.length < 11) {
+    window.alert("Press OK or Cancel to the following options. You have to choose at least two of them!");
+    
+    var desire = window.confirm("Please confirm if you like to add small latin letters to your password?");
+    if (desire) {
+      totalSelection = totalSelection + characters.alphabet;
+    } 
 
-}
+    desire = window.confirm("Would you like to add capital latin letters to your password?");
+    if (desire) {
+      totalSelection = totalSelection + characters.alphabetCapitals;
+    } 
+    
+    desire = window.confirm("Would you like to add numbers to your password?");
+    if (desire) {
+      totalSelection = totalSelection + characters.numbers;
+    } 
 
+    desire = window.confirm("Would you like to special character letters to your password?");
+    if (desire) {
+      totalSelection = totalSelection + characters.specialChar;
+    } else {
+      if (totalSelection.length < 11) {
+        alert("Sorry! You have to try at least two options");
+        totalSelection = "";
+      }
+  }
+
+  var finalPassword = "";
+  for (var i=0; i < totalSelection.length; i++) {
+    finalPassword[i] = totalSelection(randomNumber(0, totalSelection.length));
+  } 
   
-
+  return finalPassword;
 }
 
 // Get references to the #generate element
