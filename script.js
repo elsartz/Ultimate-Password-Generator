@@ -73,7 +73,7 @@ function writePassword() {
   passwordText.value = password;
   return passwordText.value;
 }
-generatePassword();
-console.log
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
