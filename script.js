@@ -7,16 +7,16 @@ var generatePassword = function() {
   // Group of characters
   var characters = {
     specialChar: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
-    alphabet: "abcdef", // ghijklmnopqrstuvwxyz",
-    alphabetCapitals: "ABCDE", // FGHIJKLMNOPQRSTUVWXYZ",
+    alphabet: "abcdefghijklmnopqrstuvwxyz",
+    alphabetCapitals: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     numbers: "0123456789"
   };
   
 
-debugger;
+// debugger;
   var totalSelection = "";
 
-  while (totalSelection.length < 11) {
+  while (totalSelection.length < 36) {
     window.alert("Press OK or Cancel to the following options. You have to choose at least two of them!");
     
     var desire = window.confirm("Please confirm if you like to add small latin letters to your password?");
@@ -37,19 +37,19 @@ debugger;
     desire = window.confirm("Would you like to special character letters to your password?");
     if (desire) {
       totalSelection = totalSelection + characters.specialChar;
-    } else {
-      if (totalSelection.length < 11) {
+    } 
+      
+    if (totalSelection.length < 36) {
         alert("Sorry! You have to try at least two options");
-        totalSelection = "";
-      }
+        totalSelection = "";      
     }
   }
 
   var finalPassword = "";
   for (var i=0; i < totalSelection.length; i++) {
-      
+// debugger;      
     finalPassword += totalSelection[randomNumber(0, totalSelection.length)];
-    
+    console.log(finalPassword[i]);
   } 
   console.log(finalPassword);
   return finalPassword;
@@ -64,8 +64,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  return password;
+  return passwordText.value;
 }
 generatePassword();
+console.log
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
