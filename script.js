@@ -1,4 +1,4 @@
-// Randomize queue
+// String Randomizer
 var randomNumber = function (min, max) {
   var result = Math.floor(Math.random() * (max - min));
   return result;
@@ -7,20 +7,12 @@ var generatePassword = function() {
   // Group of characters
   var characters = {
     specialChar: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~",
-    alphabet: "abcdefghijklmnopqrstuvwxyz",
-    alphabetCapitals: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    alphabet: "abcdef", // ghijklmnopqrstuvwxyz",
+    alphabetCapitals: "ABCDE", // FGHIJKLMNOPQRSTUVWXYZ",
     numbers: "0123456789"
   };
   
-//   var totalSelection = characters.alphabet +
-//                        characters.alphabetCapitals+
-//                        characters.numbers+
-//                        characters.specialChar;
-// // debugger;
-//   console.log(totalSelection);
 
-  
-  // var pattern = randomNumber(selection.length - totalSelection.length);
 debugger;
   var totalSelection = "";
 
@@ -50,13 +42,16 @@ debugger;
         alert("Sorry! You have to try at least two options");
         totalSelection = "";
       }
+    }
   }
 
   var finalPassword = "";
   for (var i=0; i < totalSelection.length; i++) {
-    finalPassword[i] = totalSelection(randomNumber(0, totalSelection.length));
+      
+    finalPassword += totalSelection[randomNumber(0, totalSelection.length)];
+    
   } 
-  
+  console.log(finalPassword);
   return finalPassword;
 }
 
