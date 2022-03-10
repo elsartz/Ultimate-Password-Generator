@@ -51,8 +51,10 @@ var generatePassword = function() {
     finalPassword += totalSelection[randomNumber(0, totalSelection.length)];
     console.log(finalPassword[i]);
   } 
-  console.log(finalPassword);
+  // console.log(finalPassword);
+ 
   return finalPassword;
+  
 }
 
 // Get references to the #generate element

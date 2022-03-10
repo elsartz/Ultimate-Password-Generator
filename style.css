@@ -48,6 +48,11 @@ header {
   width: 100%;
   background: #e7e9eb;
   height: 2px;
+  
+}
+
+.card-header h2 {
+  text-align: center;
 }
 
 .card-body {
