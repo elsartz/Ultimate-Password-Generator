@@ -38,7 +38,12 @@ var generatePassword = function() {
     if (desire) {
       totalSelection = totalSelection + characters.specialChar;
     } 
-      
+    
+    var realLength = window.prompt("Enter a number between 8 and 128 for the length of your password: ");
+    while (parseInt(realLength) < 8 || parseInt(realLength) >128) {
+      realLength = window.prompt("Please enter a valid number between 8 and 128 for the length of your password: ");
+    }
+
     if (totalSelection.length < 36) {
         alert("Sorry! You have to try at least two options");
         totalSelection = "";      
@@ -46,7 +51,7 @@ var generatePassword = function() {
   }
 
   var finalPassword = "";
-  for (var i=0; i < totalSelection.length; i++) {
+  for (var i=0; i < parseInt(realLength); i++) {
 // debugger;      
     finalPassword += totalSelection[randomNumber(0, totalSelection.length)];
     console.log(finalPassword[i]);
