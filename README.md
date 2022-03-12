@@ -7,4 +7,4 @@ Feel **free** to use it and forget the time of spending infront of your keyboard
 
 ![Password Generator](https://github.com/elsartz/Ultimate-Password-Generator/blob/main/PasswordGenerator.gif)
 
-> 📢: [Go and check it out]()
+> 📢: [Go and check it out](https://elsartz.github.io/Ultimate-Password-Generator/)
